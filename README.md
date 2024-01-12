@@ -1,0 +1,1 @@
+# Differential equations project at AGH university
