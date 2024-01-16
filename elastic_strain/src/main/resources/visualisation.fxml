@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minHeight="334.0" minWidth="406.0" prefHeight="441.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenter.VisualisationPresenter">
+    <center>
+    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="599.0">
+        <LineChart fx:id="plot" animated="false" horizontalGridLinesVisible="false" legendVisible="false" prefHeight="414.0" prefWidth="599.0" verticalZeroLineVisible="false" BorderPane.alignment="CENTER">
+            <xAxis>
+                <NumberAxis autoRanging="false" label="x" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="528.0" side="BOTTOM" tickUnit="0.2" upperBound="2.0" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis autoRanging="false" label="u(x)" side="LEFT" tickUnit="2.0" upperBound="28" />
+            </yAxis>
+        </LineChart>
+    </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="380.0" spacing="10" BorderPane.alignment="CENTER">
+            <Label text="n:" textAlignment="CENTER"/>
+            <Spinner fx:id="spinner" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                     minWidth="-Infinity" prefHeight="30.0" prefWidth="76.0">
+                <valueFactory>
+                    <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="10000" min="2"/>
+                </valueFactory>
+            </Spinner>
+
+            <Button fx:id="button" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                    minWidth="69.0" onAction="#generatePlot" prefHeight="30.0" prefWidth="95.0" text="generate plot"/>
+        </HBox>
+    </bottom>
+</BorderPane>
