@@ -19,16 +19,26 @@
     </VBox>
     </center>
     <bottom>
-        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="380.0" spacing="10" BorderPane.alignment="CENTER">
-            <Label text="n:" textAlignment="CENTER" />
-            <Spinner fx:id="spinner" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="76.0">
-                <valueFactory>
-                    <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="10000" min="2" />
-                </valueFactory>
-            </Spinner>
-
-            <Button fx:id="button" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="69.0" onAction="#generatePlot" prefHeight="30.0" prefWidth="95.0" text="generate plot" />
-        </HBox>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="380.0" spacing="10">
+                  <Label text="n:" textAlignment="CENTER" />
+                  <Spinner fx:id="spinner" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="83.0">
+                      <valueFactory>
+                          <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="10000" min="2" />
+                      </valueFactory>
+                  </Spinner>
+      
+                  <Button fx:id="button" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="69.0" onAction="#generatePlot" prefHeight="30.0" prefWidth="95.0" text="generate plot" />
+              </HBox>
+            <HBox alignment="CENTER" prefHeight="28.0" prefWidth="618.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="72.0" text="time elapsed:" />
+                  <Label fx:id="timeLabel" alignment="CENTER" prefHeight="18.0" prefWidth="73.0" text="0.0 [s]" textAlignment="CENTER" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
     </bottom>
    <top>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="244.0" text="Elastic strain visualisation: u(x) plot" textAlignment="CENTER" BorderPane.alignment="CENTER">
