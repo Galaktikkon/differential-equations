@@ -15,7 +15,7 @@ public class Visualisation extends Application {
         BorderPane viewRoot = loader.load();
         var scene = new Scene(viewRoot);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Elastic Strain View.Visualisation");
+        primaryStage.setTitle("Elastic Strain Visualisation");
         primaryStage.show();
     }
 }
