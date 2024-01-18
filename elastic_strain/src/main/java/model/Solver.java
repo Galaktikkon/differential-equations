@@ -21,7 +21,7 @@ public class Solver {
         );
 
     }
-
+    // base function
     private double e(double x, int i){
         if (h * (i - 1) <= x && x <= h * i){
             return x/h - i + 1;
@@ -31,7 +31,7 @@ public class Solver {
             return 0;
         }
     }
-
+    // derivative of the base function
     private double eDerivative(double x, int i){
         if (h * (i - 1) <= x && x <= h * i){
             return 1/h;
@@ -41,11 +41,12 @@ public class Solver {
             return 0;
         }
     }
-
+    // E function
     private double E(double x){
         return x <= 1 ? 3 : 5;
     }
 
+    // create Matrix and fill it with B integrals
     private RealMatrix generateMatrixB(int n){
 
         RealMatrix B = new Array2DRowRealMatrix(n,n);
@@ -55,6 +56,7 @@ public class Solver {
                 double gaussLegendreIntegral = 0.0;
 
                 if (Math.abs(i-j) <= 1) {
+
 
                     double from = (double) (domain.get('b') * Math.max(Math.max(i, j) - 1, domain.get('a'))) / n;
                     double to = (double) (domain.get('b') * Math.min(Math.min(i, j) + 1, n)) / n;
@@ -73,7 +75,7 @@ public class Solver {
         }
         return B;
     }
-
+    // generate L vector and fill it with L function
     private RealVector generateVectorL(int n){
 
         RealVector L = new ArrayRealVector(n,0);
@@ -83,7 +85,7 @@ public class Solver {
         }
         return L;
     }
-
+    // solve the equation
     public double[] solve (int n){
 
         setH(n);
